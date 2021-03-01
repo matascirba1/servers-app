@@ -93,7 +93,7 @@ const ServersList: FunctionComponent = () => {
     );
   }
 
-  if (loadFailed) {
+  if (loadFailed || !servers) {
     return (
       <Centered>
         <ErrorLabel>{Errors['5XX']}</ErrorLabel>
@@ -108,7 +108,7 @@ const ServersList: FunctionComponent = () => {
         <Header onClick={sortByDistance}>Distance</Header>
       </SpacedApart>
       <div>
-        {servers.map(({ name, distance }, index) => (
+        {servers.filter(el => el).map(({ name, distance }, index) => (
           <ListItem name={name} distance={distance} key={`${name}.${index}`} />
         ))}
       </div>
