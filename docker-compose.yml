@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  servers-app:
+    container_name: servers-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    environment:
+      - NODE_ENV=production

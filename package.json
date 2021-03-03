@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start:dev": "webpack serve --mode=development",
-    "build": "webpack --mode=production",
+    "build": "webpack  --mode=production",
     "format": "prettier --write src/**/* --ignore-unknown"
   },
   "author": "",

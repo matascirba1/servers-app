@@ -12,9 +12,8 @@ export default function Routes() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/login" />
+            <Redirect to={Paths.Login} />
           </Route>
-
           <Route path={Paths.Login} component={Login} />
           <PrivateRoute path={Paths.Servers}>
             <Servers />

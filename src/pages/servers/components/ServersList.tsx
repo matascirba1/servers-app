@@ -108,9 +108,15 @@ const ServersList: FunctionComponent = () => {
         <Header onClick={sortByDistance}>Distance</Header>
       </SpacedApart>
       <div>
-        {servers.filter(el => el).map(({ name, distance }, index) => (
-          <ListItem name={name} distance={distance} key={`${name}.${index}`} />
-        ))}
+        {servers
+          .filter((el) => el)
+          .map(({ name, distance }, index) => (
+            <ListItem
+              name={name}
+              distance={distance}
+              key={`${name}.${index}`}
+            />
+          ))}
       </div>
     </ListContainer>
   );
