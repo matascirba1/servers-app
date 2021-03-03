@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import AuthContextProvider from './login/components/AuthContextProvider';
 import { Paths } from '../constants/paths';
 import Servers from './servers/Servers';
@@ -11,6 +11,10 @@ export default function Routes() {
     <AuthContextProvider>
       <BrowserRouter>
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
+
           <Route path={Paths.Login} component={Login} />
           <PrivateRoute path={Paths.Servers}>
             <Servers />
